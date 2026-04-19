@@ -7,10 +7,12 @@ metadata:
 
 # Ask Next Action
 
-Whenever you finish the user's current task, immediately call the `ask_next_action` tool.
+Whenever you finish the user's current task, first provide a brief summary of what you completed, then call the `ask_next_action` tool.
 
 ## Core Rule
 
+- First give a **brief completion summary** of the task you just finished.
+- Keep the summary short: **1-2 sentences** or **1-3 bullet points**.
 - Do **not** invent the next step yourself.
 - Do **not** end the response immediately after saying the task is done.
 - Do **not** ask a plain-text follow-up question when the tool can be used.
@@ -43,5 +45,6 @@ Optional custom prompt:
 ## Forbidden Behavior
 
 - Finishing a task and stopping without calling `ask_next_action`
+- Giving a long post-task report instead of a brief summary
 - Proposing your own next-step checklist instead of handing control back
 - Replacing the tool with a normal assistant question when the tool is available

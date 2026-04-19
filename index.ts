@@ -24,9 +24,9 @@ export default function registerExtension(pi: ExtensionAPI) {
     name: "ask_next_action",
     label: "Ask Next Action",
     description: "Ask the user what to do next after the current task is complete.",
-    promptSnippet: "Ask the user for the next action after finishing the current task.",
+    promptSnippet: "After finishing the current task, briefly summarize what was completed, then ask the user for the next action.",
     promptGuidelines: [
-      "When you have finished the current task and need the user's next instruction, call ask_next_action instead of inventing follow-up steps yourself.",
+      "When you have finished the current task, first give a brief summary of what you completed, then call ask_next_action instead of inventing follow-up steps yourself.",
     ],
     parameters: AskNextActionParams,
 

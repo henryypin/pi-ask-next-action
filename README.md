@@ -2,7 +2,7 @@
 
 A small pi package that adds an `ask_next_action` tool and an `ask-next-action` skill.
 
-The goal is simple: after the agent finishes the current task, it can hand control back to the user with an interactive editor instead of inventing follow-up steps on its own.
+The goal is simple: after the agent finishes the current task, it first gives a brief summary of what it completed, then hands control back to the user with an interactive editor instead of inventing follow-up steps on its own.
 
 ## What it includes
 
@@ -117,7 +117,7 @@ If you want to force the behavior in the current conversation, run:
 /skill:ask-next-action
 ```
 
-The skill tells the agent to call this tool after finishing the current task:
+The skill tells the agent to briefly summarize the completed work, then call this tool:
 
 ```json
 {}
@@ -130,6 +130,12 @@ You can also pass a custom prompt:
   "question": "任務已完成，請輸入下一步的行動或提示："
 }
 ```
+
+Example behavior:
+
+1. The agent finishes the task.
+2. The agent gives a short summary of what changed or what was completed.
+3. The agent calls `ask_next_action` to let the user decide what to do next.
 
 ## Notes
 
